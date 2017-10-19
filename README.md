@@ -15,9 +15,15 @@ docker run -dti --network=host --name storage2 -e TRACKER_SERVER=192.168.31.111:
 docker run --restart=always //自动重启
 
 docker stop $(docker ps -a -q)
+
 docker rm $(docker ps -a -q)
+
 docker images
+
 docker rmi docker-fdfs
+
 docker build -t docker-fdfs .
+
 docker run -dti --network=host  -v /var/fdfs/tracker:/var/fdfs docker-fdfs   /bin/bash
+
 docker attach <ContainerID>

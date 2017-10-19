@@ -26,4 +26,4 @@ docker build -t docker-fdfs .
 
 docker run -dti --network=host  -v /var/fdfs/tracker:/var/fdfs docker-fdfs   /bin/bash
 
-docker attach <ContainerID>
+docker attach ContainerID

@@ -6,7 +6,8 @@ ENV FASTDFS_PATH=/opt/fdfs \
     FASTDFS_BASE_PATH=/var/fdfs \
     PORT= \
     GROUP_NAME= \
-    TRACKER_SERVER=
+    TRACKER_SERVER= \
+	HTTP_PORT= 
 
   
 #get all the dependences
@@ -47,7 +48,6 @@ RUN git clone https://github.com/happyfish100/fastdfs-nginx-module.git ${FASTDFS
  && rm -rf ${FASTDFS_PATH}/nginx
  
 
-EXPOSE 22122 23000 8080 8888
 VOLUME ["$FASTDFS_BASE_PATH", "/etc/fdfs"]   
 
 COPY conf/*.* /etc/fdfs/
